@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>jwt4j</groupId>
+    <artifactId>jwt4j</artifactId>
+    <packaging>jar</packaging>
+    <name>jwt4j</name>
+
+    <version>0.1.0</version>
+
+    <properties>
+        <gson.version>2.3.1</gson.version>
+        <junit.version>4.12</junit.version>
+        <mockito-all.version>1.10.19</mockito-all.version>
+        <fest-assert.version>1.4</fest-assert.version>
+
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.java.version>1.8</maven-compiler-plugin.java.version>
+        <maven-compiler-plugin.encoding>UTF-8</maven-compiler-plugin.encoding>
+    </properties>
+
+    <url>http://jwt4j.com</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Milosz Polak</name>
+            <email>milosz.polak@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:milpol/jwt4j.git</connection>
+        <developerConnection>scm:git:git@github.com:milpol/jwt4j.git</developerConnection>
+        <url>git@github.com:milpol/jwt4j.git</url>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-assert</artifactId>
+            <version>${fest-assert.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito-all.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven-compiler-plugin.java.version}</source>
+                    <target>${maven-compiler-plugin.java.version}</target>
+                    <encoding>${maven-compiler-plugin.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
