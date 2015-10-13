@@ -2,6 +2,7 @@ package jwt4j;
 
 import java.util.Collections;
 import java.util.Map;
+import java.util.Objects;
 
 public class Claims
 {
@@ -23,19 +24,15 @@ public class Claims
     public boolean equals(Object o)
     {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (!(o instanceof Claims)) return false;
         Claims claims = (Claims) o;
-
-        if (claimsMap != null ? !claimsMap.equals(claims.claimsMap) : claims.claimsMap != null) return false;
-
-        return true;
+        return Objects.equals(claimsMap, claims.claimsMap);
     }
 
     @Override
     public int hashCode()
     {
-        return claimsMap != null ? claimsMap.hashCode() : 0;
+        return Objects.hash(claimsMap);
     }
 
     @Override

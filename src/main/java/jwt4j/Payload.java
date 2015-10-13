@@ -1,5 +1,7 @@
 package jwt4j;
 
+import java.util.Objects;
+
 public class Payload<T>
 {
     private final T data;
@@ -26,24 +28,17 @@ public class Payload<T>
     public boolean equals(Object o)
     {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Payload payload = (Payload) o;
-
-        if (claims != null ? !claims.equals(payload.claims) : payload.claims != null) return false;
-        if (data != null ? !data.equals(payload.data) : payload.data != null) return false;
-
-        return true;
+        if (!(o instanceof Payload)) return false;
+        Payload<?> payload = (Payload<?>) o;
+        return Objects.equals(data, payload.data) &&
+                Objects.equals(claims, payload.claims);
     }
 
     @Override
     public int hashCode()
     {
-        int result = data != null ? data.hashCode() : 0;
-        result = 31 * result + (claims != null ? claims.hashCode() : 0);
-        return result;
+        return Objects.hash(data, claims);
     }
-
 
     @Override
     public String toString()

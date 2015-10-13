@@ -11,7 +11,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.Base64;
 import java.util.HashMap;
 
-import static org.fest.assertions.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
 public class JWTEncoderTest
