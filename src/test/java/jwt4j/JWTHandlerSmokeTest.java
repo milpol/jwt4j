@@ -8,21 +8,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class JWTHandlerSmokeTest
 {
-    private JWTHandler<String> stringJWTHandler = new JWTHandlerBuilder<>()
+    private JWTHandler<String> stringJWTHandler = new JWTHandlerBuilder<String>()
             .withSecret("super-secret".getBytes())
+            .withIssuedAtEnabled(true)
             .withDataClass(String.class)
             .withIssuer("issuer")
             .withExpirationSeconds(10)
             .build();
 
-    private JWTHandler<String> stringNoneJWTHandler = new JWTHandlerBuilder<>()
+    private JWTHandler<String> stringNoneJWTHandler = new JWTHandlerBuilder<String>()
             .withAlgorithm(Algorithm.none)
             .withDataClass(String.class)
             .withIssuer("issuer")
             .withExpirationSeconds(10)
             .build();
 
-    private JWTHandler<TestUserBean> completeJWTHandler = new JWTHandlerBuilder<>()
+    private JWTHandler<TestUserBean> completeJWTHandler = new JWTHandlerBuilder<TestUserBean>()
             .withAlgorithm(Algorithm.HS512)
             .withSecret("super-secret".getBytes())
             .withDataClass(TestUserBean.class)

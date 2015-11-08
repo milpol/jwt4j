@@ -41,13 +41,13 @@ public class JWTHandlerBuilder<T>
 
     private Optional<JWTIdGenerator> jwtIdGenerator = Optional.empty();
 
-    public JWTHandlerBuilder withDataClass(Class<T> dataClass)
+    public JWTHandlerBuilder<T> withDataClass(Class<T> dataClass)
     {
         this.dataClass = Optional.ofNullable(dataClass);
         return this;
     }
 
-    public JWTHandlerBuilder withAlgorithm(Algorithm algorithm)
+    public JWTHandlerBuilder<T> withAlgorithm(Algorithm algorithm)
     {
         this.algorithm = Optional.ofNullable(algorithm);
         if (algorithm == Algorithm.none) {
@@ -56,61 +56,61 @@ public class JWTHandlerBuilder<T>
         return this;
     }
 
-    public JWTHandlerBuilder withSecret(byte[] secret)
+    public JWTHandlerBuilder<T> withSecret(byte[] secret)
     {
         this.secret = Optional.ofNullable(secret);
         return this;
     }
 
-    public JWTHandlerBuilder withRegisteredClaimsValidator(RegisteredClaimsValidator registeredClaimsValidator)
+    public JWTHandlerBuilder<T> withRegisteredClaimsValidator(RegisteredClaimsValidator registeredClaimsValidator)
     {
         this.registeredClaimsValidator = Optional.ofNullable(registeredClaimsValidator);
         return this;
     }
 
-    public JWTHandlerBuilder withIssuer(String issuer)
+    public JWTHandlerBuilder<T> withIssuer(String issuer)
     {
         this.issuer = Optional.ofNullable(issuer);
         return this;
     }
 
-    public JWTHandlerBuilder withSubject(String subject)
+    public JWTHandlerBuilder<T> withSubject(String subject)
     {
         this.subject = Optional.ofNullable(subject);
         return this;
     }
 
-    public JWTHandlerBuilder withAudience(String audience)
+    public JWTHandlerBuilder<T> withAudience(String audience)
     {
         this.audience = Optional.ofNullable(audience);
         return this;
     }
 
-    public JWTHandlerBuilder withExpirationSeconds(int expirationSeconds)
+    public JWTHandlerBuilder<T> withExpirationSeconds(int expirationSeconds)
     {
         this.expirationSeconds = expirationSeconds;
         return this;
     }
 
-    public JWTHandlerBuilder withNotBeforeSeconds(int notBeforeSeconds)
+    public JWTHandlerBuilder<T> withNotBeforeSeconds(int notBeforeSeconds)
     {
         this.notBeforeSeconds = notBeforeSeconds;
         return this;
     }
 
-    public JWTHandlerBuilder withLeewaySeconds(int leewaySeconds)
+    public JWTHandlerBuilder<T> withLeewaySeconds(int leewaySeconds)
     {
         this.leewaySeconds = leewaySeconds;
         return this;
     }
 
-    public JWTHandlerBuilder withIssuedAtEnabled(boolean issuedAtEnabled)
+    public JWTHandlerBuilder<T> withIssuedAtEnabled(boolean issuedAtEnabled)
     {
         this.issuedAtEnabled = issuedAtEnabled;
         return this;
     }
 
-    public JWTHandlerBuilder withJwtIdGenerator(JWTIdGenerator jwtIdGenerator)
+    public JWTHandlerBuilder<T> withJwtIdGenerator(JWTIdGenerator jwtIdGenerator)
     {
         this.jwtIdGenerator = Optional.ofNullable(jwtIdGenerator);
         return this;
